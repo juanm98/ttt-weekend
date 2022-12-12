@@ -76,13 +76,14 @@ board.forEach((square, index) => {
 function updateMessage () {
      // If both `winner` and `tie` have a value of false (meaning the game is still in progress), render whose turn it is. 
     if (!winner && !tie) {
-        messageEl.textContent = "It's players turn" // I just had return on all of these
+        // It's either X or O
+        messageEl.textContent = `It's ${turn === 1 ? 'X' : 'O'}'s turn` // I just had "return" on all of these
         // If `winner` is false, but `tie` is true, render a tie message.
     } else if (!winner && tie) {
-        messageEl.textContent = "The game is a tie";
+        messageEl.textContent = `Fight!`;
          // Otherwise, render a congratulatory message to the player that has won.
     } else {
-        messageEl.textContent = "Congratulations! You won the game.";
+        messageEl.textContent = `${turn === 1 ? 'X' : 'O'} wins`;
     }
 }
 // Step 6 - Handle a player clicking a square with a `handleClick` function
