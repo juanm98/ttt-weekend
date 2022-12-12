@@ -21,11 +21,12 @@ const tie = false
 /*------------------------ Cached Element References ------------------------*/
 const squareEls = document.querySelectorAll(".sqr0, .sqr1, .sqr2, .sqr3, .sqr4, .sqr5, .sqr6, .sqr7, .sqr8")
 const messageEl = document.getElementById("message")
+const gameBoard = document.getElementsByClassName("board");
 
 
 /*----------------------------- Event Listeners -----------------------------*/
 window.addEventListener('load', init)
-
+gameBoard.addEventListener('click', handleClick);
 
 /*-------------------------------- Functions --------------------------------*/
 function init() {
@@ -39,7 +40,7 @@ updateMessage(winner, tie);
 
 function updateBoard(board) {
 board.forEach((square, index) => {
-    const squareEl = squareEls[index]          // I'm not quite clear on how this works
+    const squareEl = squareEls[index]
     if(square === 1) {
         return squareEl.innerText = "X";
     } else if (square === -1) {
@@ -61,3 +62,6 @@ function updateMessage (winner, tie) {
     }
 }
 
+function handleClick (evt) {
+    
+}
