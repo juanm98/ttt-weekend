@@ -111,15 +111,18 @@ function checkForTie () {
 }
 
 function checkForWinner () {
-    winningCombos.forEach(function(winArr) {
-        let sum =
-        winArr.reduce(function(prev, num) {
-            return Math.abs(board[prev] + board[num])
-        }, 0);
-        if (sum === 3) {
-            winner = true
-        }
-    })
+    if (
+    Math.abs(board[0] + board[1] + board[2]) === 3 ||
+    Math.abs(board[3] + board[4] + board[5]) === 3 ||
+    Math.abs(board[6] + board[7] + board[8]) === 3 ||
+    Math.abs(board[0] + board[3] + board[6]) === 3 ||
+    Math.abs(board[1] + board[4] + board[7]) === 3 ||
+    Math.abs(board[2] + board[5] + board[8]) === 3 ||
+    Math.abs(board[2] + board[4] + board[6]) === 3 ||
+    Math.abs(board[0] + board[4] + board[6]) === 3 
+    ) {
+        winner = true
+    }
     
 }
 
