@@ -21,12 +21,12 @@ const tie = false
 /*------------------------ Cached Element References ------------------------*/
 const squareEls = document.querySelectorAll(".sqr0, .sqr1, .sqr2, .sqr3, .sqr4, .sqr5, .sqr6, .sqr7, .sqr8")
 const messageEl = document.getElementById("message")
-const gameBoard = document.getElementsByClassName("board");
+const gameBoardEl = document.getElementsByClassName("board");
 
 
 /*----------------------------- Event Listeners -----------------------------*/
 window.addEventListener('load', init)
-gameBoard.addEventListener('click', handleClick);
+gameBoardEl.addEventListener('click', handleClick);
 
 /*-------------------------------- Functions --------------------------------*/
 function init() {
@@ -62,6 +62,7 @@ function updateMessage (winner, tie) {
     }
 }
 
-function handleClick (evt) {
-    
+function handleClick () {
+    const sqIdx = evt.target.id
+    if (board[sqIdx].innerHTML !== null) return
 }
